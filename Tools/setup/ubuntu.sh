@@ -11,7 +11,7 @@ set -e
 ## - jMAVSim and Gazebo9 simulator (omit with arg: --no-sim-tools)
 ##
 
-INSTALL_NUTTX="true"
+INSTALL_NUTTX="false"
 INSTALL_SIM="true"
 INSTALL_ARCH=`uname -m`
 
@@ -48,8 +48,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 REQUIREMENTS_FILE="requirements.txt"
 if [[ ! -f "${DIR}/${REQUIREMENTS_FILE}" ]]; then
 	echo "FAILED: ${REQUIREMENTS_FILE} needed in same directory as ubuntu.sh (${DIR})."
-	return 1
+	exit 1
 fi
+
 
 
 # check ubuntu version
@@ -78,11 +79,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends i
 	libxml2-utils \
 	make \
 	ninja-build \
-	python3 \
-	python3-dev \
-	python3-pip \
-	python3-setuptools \
-	python3-wheel \
 	rsync \
 	shellcheck \
 	unzip \
