@@ -290,6 +290,9 @@ fi
 
 navigator start
 
+# Uploaded control policy host (see src/modules/ext_policy)
+ext_policy start
+
 # Try to start the UXRCE-DDS Client with UDP transport if module exists
 uxrce_dds_ns=""
 if [ "$px4_instance" -ne "0" ]

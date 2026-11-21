@@ -1,0 +1,6 @@
+menuconfig MODULES_EXT_POLICY
+	bool "ext_policy"
+	default n
+	---help---
+		Run an uploaded, hot-swappable control policy u = f(x) (flat state, snap output)
+		and switch between it and the PX4 controllers.
